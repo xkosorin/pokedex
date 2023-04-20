@@ -3,31 +3,28 @@ import Card from "./Card";
 import styles from "../styles/CardsGrid.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTable } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { PokemonData } from "./Homepage";
 
-const CardsGrid = () => {
+interface Props {
+  data: PokemonData;
+}
+
+const CardsGrid: React.FC<Props> = ({ data }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
+      <h3 className={styles.title}>
         <FontAwesomeIcon icon={faTable} />
         <span className={styles.title}>Přehled Pokémonů</span>
-      </div>
+      </h3>
       <div className={styles["grid-container"]}>
-        <Card
-          pokemonName="Test"
-          pokemonImageLink="https://e7.pngegg.com/pngimages/72/948/png-clipart-bulbasaur-pokemon-diamond-and-pearl-pokemon-go-pokedex-ivysaur-bulbasaur-pixel-vertebrate-grass-thumbnail.png"
-        />
-        <Card
-          pokemonName="Test"
-          pokemonImageLink="https://e7.pngegg.com/pngimages/72/948/png-clipart-bulbasaur-pokemon-diamond-and-pearl-pokemon-go-pokedex-ivysaur-bulbasaur-pixel-vertebrate-grass-thumbnail.png"
-        />
-        <Card
-          pokemonName="Test"
-          pokemonImageLink="https://e7.pngegg.com/pngimages/72/948/png-clipart-bulbasaur-pokemon-diamond-and-pearl-pokemon-go-pokedex-ivysaur-bulbasaur-pixel-vertebrate-grass-thumbnail.png"
-        />
-        <Card
-          pokemonName="Test"
-          pokemonImageLink="https://e7.pngegg.com/pngimages/72/948/png-clipart-bulbasaur-pokemon-diamond-and-pearl-pokemon-go-pokedex-ivysaur-bulbasaur-pixel-vertebrate-grass-thumbnail.png"
-        />
+        {data.pokemon_v2_pokemonformgeneration.map((pokemon) => (
+          <Card
+            key={pokemon.pokemon_v2_pokemonform.id}
+            pokemonName={pokemon.pokemon_v2_pokemonform.name}
+            pokemonId={pokemon.pokemon_v2_pokemonform.id}
+          />
+        ))}
       </div>
     </div>
   );
