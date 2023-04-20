@@ -1,0 +1,36 @@
+$primary: #FCFCFC;
+$secondary: #FF3E4E;
+
+.container {
+  width: 320px;
+  height: 400px;
+  background-color: $primary;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  .image {
+    margin: 40px;
+    width: 240px;
+    height: 240px;
+
+    img {
+      width: 240px;
+      height: 240px;
+    }
+  }
+
+  .name {
+    height: 80px;
+    width: 100%;
+    background-color: $secondary;
+    font-size: 24px;
+    line-height: 29px;
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

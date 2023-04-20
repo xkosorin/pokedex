@@ -1,0 +1,12 @@
+.container {
+  max-width: 1364px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+
+  .inputField {
+    width: 70%;
+    margin-top: 140px;
+  }
+}

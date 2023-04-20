@@ -1,0 +1,98 @@
+$input-border-color: #ced4da;
+$input-focus-border-color: #80bdff;
+$input-background-color: #ffffff;
+$input-placeholder-color: #A5A5A5;
+
+.container {
+  position: relative;
+  width: 100%;
+
+  input {
+    display: block;
+    width: 100%;
+    height: 80px;
+    padding: 12px 120px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: lighter;
+    color: #495057;
+    background-color: $input-background-color;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+    &:focus {
+      outline: none;
+      border-color: $input-focus-border-color;
+      box-shadow: 0 0 0 0.2rem rgba($input-focus-border-color, 0.25);
+    }
+
+    &::placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &::-moz-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &:-ms-input-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &::-ms-input-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  .clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+    font-size: 22px;
+    color: $input-placeholder-color;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    i {
+      pointer-events: none;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    font-size: 22px;
+    color: $input-placeholder-color;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    i {
+      pointer-events: none;
+    }
+  }
+}
