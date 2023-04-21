@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "../styles/Card.module.scss";
+import { Link } from "react-router-dom";
 
 interface Props {
   pokemonName: string;
@@ -9,12 +10,12 @@ interface Props {
 
 const Card: React.FC<Props> = ({ pokemonName, pokemonId }) => {
   return (
-    <div className={styles.container}>
+    <Link to={`/pokemon/${pokemonId}`} className={styles.container}>
       <div className={styles.image}>
         <img src={`${import.meta.env.VITE_ARTWORK_URL}/${pokemonId}.png`} />
       </div>
       <div className={styles.name}>{pokemonName}</div>
-    </div>
+    </Link>
   );
 };
 

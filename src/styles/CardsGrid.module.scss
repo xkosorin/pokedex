@@ -19,4 +19,45 @@
     grid-row-gap: 40px;
     grid-column-gap: 28px;
   }
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+
+    .button {
+      width: 55px;
+      height: 55px;
+      border: 1px solid #A5A5A5;
+      border-radius: 8px;
+      font-size: 24px;
+      line-height: 55px;
+      text-align: center;
+      list-style: none;
+      display: inline-block;
+    }
+
+    .page {
+      width: 55px;
+      height: 55px;
+      border: 0;
+      font-size: 24px;
+      line-height: 55px;
+      text-align: center;
+      list-style: none;
+      display: inline-block;
+
+      &.active {
+        width: 55px;
+        height: 55px;
+        border: 1px solid #1D1D1D;
+        border-radius: 8px;
+        font-size: 24px;
+        line-height: 55px;
+        text-align: center;
+        list-style: none;
+      }
+    }
+  }
 }

@@ -7,6 +7,23 @@ $secondary: #FF3E4E;
   background-color: $primary;
   box-sizing: border-box;
   border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:hover::after {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 
   .image {
     margin: 40px;

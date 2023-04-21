@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import Homepage from "./components/Homepage";
 import PokemonDetail from "./components/PokemonDetail";
 import Navbar from "./components/Navbar";

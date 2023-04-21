@@ -6,15 +6,24 @@ import styles from "../styles/SearchInput.module.scss";
 
 interface Props {
   handleSubmit(e: React.FormEvent<HTMLFormElement>): void;
+  handleChange?(value: string): void;
 }
 
 const SearchInput = forwardRef<HTMLInputElement, Props>(
-  ({ handleSubmit }, ref) => {
+  ({ handleSubmit, handleChange }, ref) => {
     const [input, setInput] = useState<string>("");
 
     const clearInputField = (e: React.FormEvent<HTMLButtonElement>) => {
       e.preventDefault();
       setInput("");
+
+      if (handleChange) handleChange("");
+    };
+
+    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setInput(e.target.value);
+
+      if (handleChange) handleChange(e.target.value);
     };
 
     return (
@@ -26,7 +35,7 @@ const SearchInput = forwardRef<HTMLInputElement, Props>(
           type="text"
           placeholder="Zadejte jméno Pokémona"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => handleOnChange(e)}
           ref={ref}
         />
         <button
